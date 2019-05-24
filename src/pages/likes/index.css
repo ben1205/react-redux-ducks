@@ -1,0 +1,22 @@
+.title{
+  color: red;
+}
+
+.fot20{
+  font-size: 20px;
+}
+
+.compose{
+  composes: title fot20;
+}
+
+.top_title{
+  cursor: pointer;
+}
+
+.item1{
+  width: 20vw;
+  min-width: 100px;
+  height: 20vh;
+  background-color:#eee;
+}

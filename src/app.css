@@ -1,0 +1,9 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+.nav_tab{
+  text-decoration: none;
+  color: #222;
+  padding: 10px 20px;
+}

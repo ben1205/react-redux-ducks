@@ -1,29 +1,14 @@
 import React from 'react';
 import List from './List';
 import Input from './Input';
+import TopImg from './topImg'
 
 class ToDoApp extends React.Component {
 
-  // constructor (props) {
-  //   super(props)
-  //   this.state = {
-  //     Lists : [
-  //       {
-  //         item : 'thing1',
-  //         done : false
-  //       },
-  //       {
-  //         item : 'thing2',
-  //         done : false
-  //       },
-  //       {
-  //         item : 'thing3',
-  //         done : false
-  //       }
-  //     ],
-  //     inputValue : 'test'
-  //   }
-  // }
+  constructor (props) {
+    super(props)
+    this.myRef = React.createRef();
+  }
 
   onListItemClick = (i) => {
     console.log(i)
@@ -38,6 +23,7 @@ class ToDoApp extends React.Component {
   }
 
   onInputSubmit = (event) => {
+    console.log(`利用ref操作的dom得到的文本内容是:${this.myRef.current.innerText}`)
     event.preventDefault()
     this.props.inputSubmit()
     // this.setState((previousState)=>({
@@ -49,7 +35,7 @@ class ToDoApp extends React.Component {
 
   onInputChange = (event) => {
     console.log(event.target.value)
-    this.props.inputChange(event.target.value)
+    this.props.inputChange(event.target.value.toUpperCase())
   };
 
   onListItemRemove = (i) => {
@@ -69,10 +55,17 @@ class ToDoApp extends React.Component {
   //   })
   // }
 
+  componentDidMount () {
+    // console.log(this.abb.value = 'ben00000');
+  }
+
   render () {
     console.log(this.props)
     return (
       <div className="row">
+        <TopImg />
+        <input type="text" defaultValue = '3455' ref={(input) => this.abb = input} name="ben_099"/>
+        <div ref={this.myRef}>my Refs</div>
         <div className="col-md-10 col-md-offset-1">
           <div className="panel panel-default">
             <div className="panel-body">
